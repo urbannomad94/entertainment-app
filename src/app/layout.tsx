@@ -4,7 +4,7 @@ import { Outfit } from 'next/font/google'
 const inter = Outfit({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Enetertainment App',
+  title: 'Entertainment App',
 }
 
 export default function RootLayout({

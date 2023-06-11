@@ -2,13 +2,14 @@
   --red: #fc4747;
   --black: #10141e;
   --light-grey: #5a698f;
-  --dark-grey: #161d2f;
+  --dark-blue: #161d2f;
   --white: #ffffff;
 }
 
 body {
   background-color: var(--black);
   color: var(--white);
+  margin: 0;
 }
 
 h1,
@@ -19,4 +20,34 @@ span,
 li,
 a {
   font-weight: 300;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+input {
+  width: 336px;
+  height: 37px;
+  border: none;
+  background-color: var(--dark-blue);
+  font-size: 15px;
+}
+
+hr {
+  height: 1px;
+  width: 336px;
+  background-color: var(--light-grey);
+  margin: 0;
+  border: 0;
+}
+
+Link:hover {
+  cursor: pointer;
 }
