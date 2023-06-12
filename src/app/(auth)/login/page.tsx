@@ -1,8 +1,24 @@
+'use client'
+
 import Link from 'next/link'
 import styles from './page.module.css'
 import Image from 'next/image'
+import { useForm } from 'react-hook-form'
 
 export default function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  })
+
+  console.log(errors)
+
   return (
     <>
       <Image
@@ -14,13 +30,31 @@ export default function Login() {
       ></Image>
       <div className={styles.container}>
         <h1>Login</h1>
-        <form action=''>
+        <form
+          onSubmit={handleSubmit((data) => {
+            console.log(data)
+          })}
+        >
           <div>
-            <input type='email' placeholder='Email address' />
+            <div className='errorContainer'>
+              <input
+                {...register('email', { required: `Can't be empty` })}
+                type='email'
+                placeholder='Email address'
+              />
+              <p className='errorMsg'>{errors.email?.message}</p>
+            </div>
             <hr />
           </div>
           <div>
-            <input type='text' placeholder='Password' />
+            <div className='errorContainer'>
+              <input
+                {...register('password', { required: `Can't be empty` })}
+                type='text'
+                placeholder='Password'
+              />
+              <p className='errorMsg'>{errors.password?.message}</p>
+            </div>
             <hr />
           </div>
           <button className={styles.loginBtn}>Login to your account</button>

@@ -38,6 +38,8 @@ input {
   border: none;
   background-color: var(--dark-blue);
   font-size: 15px;
+  color: var(--white);
+  background-color: transparent;
 }
 
 hr {
@@ -50,4 +52,16 @@ hr {
 
 Link:hover {
   cursor: pointer;
+}
+
+.errorContainer {
+  position: relative;
+}
+
+.errorMsg {
+  position: absolute;
+  right: 30px;
+  bottom: 0px;
+  color: var(--red);
+  font-size: 13px;
 }
