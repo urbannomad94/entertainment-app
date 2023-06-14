@@ -91,7 +91,7 @@ export default function SignUp() {
         </form>
         <p className={styles.subtitle}>
           Already have an account?{' '}
-          <Link href='/login' className={styles.loginLink}>
+          <Link href='/login' className={styles.loginLink + ' pointerHover'}>
             Login
           </Link>
         </p>

@@ -26,10 +26,6 @@
   text-decoration: none;
 }
 
-.loginLink:hover {
-  cursor: pointer;
-}
-
 .logo {
   margin-bottom: 83px;
 }

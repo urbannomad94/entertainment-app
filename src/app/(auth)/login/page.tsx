@@ -60,8 +60,8 @@ export default function Login() {
           <button className={styles.loginBtn}>Login to your account</button>
         </form>
         <p className={styles.subtitle}>
-          Don&apost have an account?{' '}
-          <Link href='/sign-up' className={styles.signUpLink}>
+          Don&apos;t have an account?{' '}
+          <Link href='/sign-up' className={styles.signUpLink + ' pointerHover'}>
             Sign Up
           </Link>
         </p>

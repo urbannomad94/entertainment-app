@@ -1,7 +1,7 @@
 import './globals.css'
 import { Outfit } from 'next/font/google'
 
-const inter = Outfit({ subsets: ['latin'] })
+const inter = Outfit({ subsets: ['latin'], weight: ['300', '500', '700'] })
 
 export const metadata = {
   title: 'Entertainment App',
