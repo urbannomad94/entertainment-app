@@ -1,6 +1,5 @@
-import NavBar from '@/componenets/NavBar/NavBar'
-import SearchBar from '@/componenets/SearchBar/SearchBar'
-
+import NavBar from '@/components/NavBar/NavBar'
+import SearchBar from '@/components/SearchBar/SearchBar'
 import styles from './layout.module.css'
 
 export const metadata = {

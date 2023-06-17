@@ -27,5 +27,15 @@
 }
 
 .logo {
-  margin-bottom: 83px;
+  margin: 79px 0 83px 0;
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 327px;
+  }
+
+  .signUpBtn {
+    width: 279px;
+  }
 }

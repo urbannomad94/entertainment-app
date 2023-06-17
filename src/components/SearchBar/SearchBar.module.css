@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  gap: 24px;
+  height: 30px;
+  align-items: center;
+  margin: 32px 0;
+}
+
+.search {
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.imgContainer {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 375px) {
+  .container {
+    margin-left: 16px;
+    height: 24px;
+    gap: 16px;
+  }
+
+  .search {
+    font-size: 16px;
+  }
+
+  .imgContainer {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  background-color: var(--dark-blue);
+  width: 96px;
+  height: 92vh;
+  max-height: 960px;
+  border-radius: 20px;
+  margin: 0 32px 32px 32px;
+}
+
+.tabs {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: solid 1px white;
+}
+
+.imgContainer {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.avatarContainer {
+  position: relative;
+  margin-top: auto;
+  width: 32px;
+  height: 32px;
+}
+
+.logoContainer {
+  position: relative;
+  width: 32px;
+  height: 26px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: row;
+    height: 72px;
+    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tabs {
+    flex-direction: row;
+    margin-top: 0;
+    margin-left: ;
+  }
+
+  .avatarContainer {
+    margin: 0;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    width: 100vw;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .imgContainer {
+    width: 16px;
+    height: 16px;
+  }
+
+  .avatarContainer {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logoContainer {
+    width: 25px;
+    height: 20px;
+  }
+}

@@ -1,7 +1,10 @@
 import './globals.css'
 import { Outfit } from 'next/font/google'
 
-const inter = Outfit({ subsets: ['latin'], weight: ['300', '500', '700'] })
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['100', '300', '500', '700'],
+})
 
 export const metadata = {
   title: 'Entertainment App',
@@ -14,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={outfit.className}>{children}</body>
     </html>
   )
 }
