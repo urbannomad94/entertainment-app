@@ -1,0 +1,55 @@
+.container {
+  width: 280px;
+  height: 226px;
+  color: var(--white);
+}
+
+.imgContainer {
+  position: relative;
+  border-radius: 8px;
+  width: 280px;
+  height: 174px;
+}
+
+.info {
+  margin: 8px 0 5px 0;
+  font-size: 13px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 220px;
+    height: 192px;
+  }
+
+  .imgContainer {
+    width: 220px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 164px;
+    height: 154px;
+  }
+
+  .imgContainer {
+    width: 164px;
+    height: 110px;
+  }
+
+  .info {
+    margin-bottom: 4px;
+    font-size: 11px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}

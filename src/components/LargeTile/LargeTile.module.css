@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  width: 470px;
+  height: 230px;
+  border-radius: 8px;
+  color: var(--white);
+  background-image: url('../../../public/thumbnails/beyond-earth/trending/large.jpg');
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 470px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 240px;
+    height: 140px;
+    padding: 16px;
+  }
+}

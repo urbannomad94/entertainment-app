@@ -1,8 +1,13 @@
+'use client'
+
 import styles from './NavBar.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function NavBar() {
+  const tab = usePathname().substring(1)
+
   return (
     <div className={styles.container}>
       <div className={styles.logoContainer}>
@@ -11,7 +16,12 @@ export default function NavBar() {
       <div className={styles.tabs}>
         <Link href='/browse' className='pointerHover'>
           <div className={styles.imgContainer}>
-            <Image src='/icon-nav-home.svg' alt='browse' fill></Image>
+            <Image
+              src='/icon-nav-home.svg'
+              alt='browse'
+              fill
+              className='icon-home'
+            ></Image>
           </div>
         </Link>
         <Link href='/movies' className='pointerHover'>

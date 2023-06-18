@@ -1,0 +1,18 @@
+.trendingContainer {
+  display: flex;
+  overflow: hidden;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .trendingContainer {
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 375px) {
+  .trendingContainer {
+    gap: 16px;
+    margin: 0 16px;
+  }
+}

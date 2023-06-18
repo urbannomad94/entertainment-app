@@ -38,6 +38,11 @@ h1 {
   font-size: 32px;
 }
 
+p {
+  margin: 0;
+  font-size: 15px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -88,6 +93,20 @@ Link:hover {
   cursor: pointer;
 }
 
+.title {
+  font-size: 24px;
+  margin: 3px 0 0 0;
+}
+
+.image {
+  border-radius: 8px;
+}
+
+/* Styling for tab icons */
+.icon-home:hover {
+  fill: red;
+}
+
 /* Prevent input from bg from changing color */
 input:-webkit-autofill,
 textarea:-webkit-autofill,
@@ -107,5 +126,13 @@ select:-webkit-autofill {
 
   input {
     width: 100%;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 15px;
   }
 }
