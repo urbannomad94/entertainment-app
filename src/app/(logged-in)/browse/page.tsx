@@ -21,12 +21,80 @@ export default function Browse() {
         />
       </div>
       <h1 style={{ marginBottom: 32, marginTop: 40 }}>Recommended for you</h1>
-      <SmallTile
-        year={2022}
-        category='tv-series'
-        rating='PG-13'
-        title='Andor'
-      />
+      <div className='gridContainer'>
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+      </div>
     </>
   )
 }

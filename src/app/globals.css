@@ -102,9 +102,10 @@ Link:hover {
   border-radius: 8px;
 }
 
-/* Styling for tab icons */
-.icon-home:hover {
-  fill: red;
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 32px;
 }
 
 /* Prevent input from bg from changing color */
@@ -113,6 +114,14 @@ textarea:-webkit-autofill,
 select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #1b1b1b inset !important;
   -webkit-text-fill-color: white !important;
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 29px 24px;
+    margin: 0 25px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -134,5 +143,11 @@ select:-webkit-autofill {
 
   .title {
     font-size: 15px;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 16px;
+    margin: 0 16px;
   }
 }

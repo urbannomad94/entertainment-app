@@ -16,12 +16,7 @@ export default function NavBar() {
       <div className={styles.tabs}>
         <Link href='/browse' className='pointerHover'>
           <div className={styles.imgContainer}>
-            <Image
-              src='/icon-nav-home.svg'
-              alt='browse'
-              fill
-              className='icon-home'
-            ></Image>
+            <Image src='/icon-nav-home.svg' alt='browse' fill></Image>
           </div>
         </Link>
         <Link href='/movies' className='pointerHover'>
