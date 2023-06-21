@@ -17,7 +17,7 @@ export default function LargeTile({
   title: string
 }) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} pointerHover`}>
       <p>
         {year} •{' '}
         {category === 'movie' ? (

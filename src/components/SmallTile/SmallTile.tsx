@@ -17,7 +17,7 @@ export default function SmallTile({
   title: string
 }) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} pointerHover`}>
       <div className={styles.imgContainer}>
         <Image
           src='/thumbnails/112/regular/medium.jpg'
