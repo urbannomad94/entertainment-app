@@ -5,7 +5,7 @@ import SmallTile from '@/components/SmallTile/SmallTile'
 export default function Browse() {
   return (
     <>
-      <h1 style={{ marginBottom: 25 }}>Trending</h1>
+      <h1 className={styles.title}>Trending</h1>
       <div className={styles.trendingContainer}>
         <LargeTile
           year={2019}
@@ -20,7 +20,7 @@ export default function Browse() {
           title='Andor'
         />
       </div>
-      <h1 style={{ marginBottom: 32, marginTop: 40 }}>Recommended for you</h1>
+      <h1 className={styles.title}>Recommended for you</h1>
       <div className='gridContainer'>
         <SmallTile
           year={2022}

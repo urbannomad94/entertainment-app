@@ -1,9 +1,84 @@
+import SmallTile from '@/components/SmallTile/SmallTile'
 import styles from './page.module.css'
 
 export default function Movies() {
   return (
     <>
       <h1>Movies</h1>
+      <div className='gridContainer'>
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+        <SmallTile
+          year={2022}
+          category='tv-series'
+          rating='PG-13'
+          title='Andor'
+        />
+      </div>
     </>
   )
 }

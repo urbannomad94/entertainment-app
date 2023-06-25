@@ -46,11 +46,12 @@ p {
 form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
 }
 
 input {
-  width: 381px;
+  width: 336px;
   height: 37px;
   border: none;
   background-color: var(--dark-blue);
@@ -67,7 +68,7 @@ input:focus-visible {
 
 hr {
   height: 1px;
-  width: 336px;
+  width: 100%;
   background-color: var(--light-grey);
   margin: 0;
   border: 0;
@@ -106,7 +107,33 @@ Link:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px 32px;
+  margin-top: 24px;
 }
+
+.dimmed {
+  background-color: var(--black);
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.playBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 19px;
+  width: 117px;
+  height: 48px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 28.5px;
+}
+
+/* .playBtn:hover:not(:has(*:hover)) {
+  opacity: 1 !important;
+} */
 
 /* Prevent input from bg from changing color */
 input:-webkit-autofill,
@@ -120,7 +147,10 @@ select:-webkit-autofill {
   .gridContainer {
     grid-template-columns: repeat(3, 1fr);
     gap: 29px 24px;
-    margin: 0 25px;
+  }
+
+  .playBtn {
+    display: none;
   }
 }
 
@@ -148,6 +178,5 @@ select:-webkit-autofill {
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px 16px;
-    margin: 0 16px;
   }
 }

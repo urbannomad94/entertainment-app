@@ -29,7 +29,7 @@ export default function Login() {
         height='26'
       ></Image>
       <div className={styles.container}>
-        <h1>Login</h1>
+        <h1 style={{ marginBottom: '40px', alignSelf: 'flex-start' }}>Login</h1>
         <form
           onSubmit={handleSubmit((data) => {
             console.log(data)

@@ -12,10 +12,18 @@
   .container {
     flex-direction: column;
   }
+
+  .wrapper {
+    margin: 0 25px;
+  }
 }
 
 @media (max-width: 375px) {
   .container {
     margin: 0;
+  }
+
+  .wrapper {
+    margin: 0 16px;
   }
 }

@@ -2,6 +2,7 @@
 
 import styles from './SmallTile.module.css'
 import Image from 'next/image'
+import bg from '/public/thumbnails/112/regular/medium.jpg'
 
 import { useState } from 'react'
 
@@ -16,15 +17,27 @@ export default function SmallTile({
   rating: 'G' | 'PG' | 'PG-13' | 'R'
   title: string
 }) {
+  const [hovered, setHovered] = useState(false)
+
   return (
     <div className={`${styles.container} pointerHover`}>
-      <div className={styles.imgContainer}>
-        <Image
-          src='/thumbnails/112/regular/medium.jpg'
-          alt='movie image'
-          fill
-          className='image'
-        ></Image>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={`${styles.imgContainer} ${hovered && 'dimmed'}`}
+        style={{
+          backgroundImage: `url(${bg.src})`,
+        }}
+      >
+        <div className={`${!hovered && 'hidden'} playBtn`}>
+          <Image
+            src='/icon-play.svg'
+            alt='movie icon'
+            width={30}
+            height={30}
+          ></Image>
+          <span>Play</span>
+        </div>
       </div>
       <p className={styles.info}>
         {year} •{' '}
@@ -55,10 +68,3 @@ export default function SmallTile({
     </div>
   )
 }
-
-;<Image
-  src='/icon-category-movie.svg'
-  alt='movie icon'
-  width={12}
-  height={12}
-></Image>
