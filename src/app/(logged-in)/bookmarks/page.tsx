@@ -79,7 +79,7 @@ export default function Bookmarks() {
           title='Andor'
         />
       </div>
-      <h1 style={{ marginTop: '40pxgit ' }}>Bookmarked TV Series</h1>
+      <h1 style={{ marginTop: '40px' }}>Bookmarked TV Series</h1>
       <div className='gridContainer'>
         <SmallTile
           year={2022}
