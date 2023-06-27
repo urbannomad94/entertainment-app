@@ -2,7 +2,6 @@
 
 import styles from './SmallTile.module.css'
 import Image from 'next/image'
-import bg from '/public/thumbnails/112/regular/medium.jpg'
 
 import { useState } from 'react'
 
@@ -11,11 +10,13 @@ export default function SmallTile({
   category,
   rating,
   title,
+  image,
 }: {
   year: number
   category: 'movie' | 'tv-series'
   rating: 'G' | 'PG' | 'PG-13' | 'R'
   title: string
+  image: string
 }) {
   const [hovered, setHovered] = useState(false)
 
@@ -26,7 +27,8 @@ export default function SmallTile({
         onMouseLeave={() => setHovered(false)}
         className={`${styles.imgContainer} ${hovered && 'dimmed'}`}
         style={{
-          backgroundImage: `url(${bg.src})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${image})`,
+          backgroundSize: 'cover',
         }}
       >
         <div className={`${!hovered && 'hidden'} playBtn`}>
