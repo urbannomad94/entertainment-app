@@ -64,7 +64,7 @@ export default function SmallTile({
             TV Series
           </span>
         )}{' '}
-        • {rating}
+        • {rating ? 'Adult' : 'Family'}
       </p>
       <h3 className={styles.title}>{title}</h3>
     </div>
