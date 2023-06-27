@@ -1,6 +1,6 @@
 .trendingContainer {
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
   gap: 40px;
   margin: 25px 0 40px 0;
 }

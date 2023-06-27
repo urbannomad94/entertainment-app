@@ -1,9 +1,13 @@
 import SmallTile from '@/components/SmallTile/SmallTile'
 import styles from './page.module.css'
-import { getTVShows } from '@/utils/fetchData'
+import { getShows } from '@/utils/fetchData'
+
+export const metadata = {
+  title: 'Entertainment App | TV Series',
+}
 
 export default async function TvSeries() {
-  const shows = await getTVShows()
+  const shows = await getShows()
 
   const showTiles = shows.results.map((show: any) => {
     return (
@@ -12,7 +16,7 @@ export default async function TvSeries() {
         year={show.first_air_date.split('-')[0].toString()}
         category='movie'
         rating={show.adult}
-        title={show.title}
+        title={show.name}
         image={show.backdrop_path}
       />
     )

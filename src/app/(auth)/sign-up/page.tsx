@@ -5,6 +5,10 @@ import styles from './page.module.css'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 
+// export const metadata = {
+//   title: 'Entertainment App | Sign Up',
+// }
+
 export default function SignUp() {
   const {
     register,

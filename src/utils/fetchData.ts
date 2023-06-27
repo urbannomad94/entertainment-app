@@ -15,7 +15,7 @@ export async function getMovies() {
   return movies
 }
 
-export async function getTVShows() {
+export async function getShows() {
   const options = {
     method: 'GET',
     headers: {
@@ -30,4 +30,13 @@ export async function getTVShows() {
   )
   const tvShows = await res.json()
   return tvShows
+}
+
+export async function getMovieAndShows() {
+  const movies = await getMovies()
+  const shows = await getShows()
+  const moviesAndShows = [...movies.results, ...shows.results].sort(
+    (a, b) => 0.5 - Math.random()
+  )
+  return moviesAndShows
 }

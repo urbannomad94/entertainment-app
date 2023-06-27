@@ -3,6 +3,10 @@ import styles from './page.module.css'
 
 import { getMovies } from '@/utils/fetchData'
 
+export const metadata = {
+  title: 'Entertainment App | Movies',
+}
+
 export default async function Movies() {
   const movies = await getMovies()
 
