@@ -40,12 +40,14 @@ export default async function Browse() {
           category='movie'
           rating='PG'
           title='Beyond Earth'
+          image='placeholder'
         />
         <LargeTile
           year={2022}
           category='tv-series'
           rating='PG-13'
           title='Andor'
+          image='placeholder'
         />
       </div>
       <h1 className={styles.title}>Recommended for you</h1>

@@ -2,7 +2,6 @@
 
 import styles from './LargeTile.module.css'
 import Image from 'next/image'
-import bg from '../../../public/thumbnails/beyond-earth/trending/large.jpg'
 
 import { useState } from 'react'
 
@@ -11,23 +10,22 @@ export default function LargeTile({
   category,
   rating,
   title,
+  image,
 }: {
   year: number
   category: 'movie' | 'tv-series'
   rating: 'G' | 'PG' | 'PG-13' | 'R'
   title: string
+  image: string
 }) {
   const [hovered, setHovered] = useState(false)
-
-  // const backgroundImage =
-  //   '../../../public/thumbnails/beyond-earth/trending/large.jpg'
 
   return (
     <>
       <div
         className={`${styles.container} ${hovered && 'dimmed'} pointerHover`}
         style={{
-          backgroundImage: `url(${bg.src})`,
+          backgroundImage: `url(placeholder)`,
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

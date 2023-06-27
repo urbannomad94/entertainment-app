@@ -4,7 +4,7 @@ export type MovieData = {
   adult: boolean
   title: string
   backdrop_path: string
-}
+}[]
 
 export type ShowsData = {
   id: number
@@ -12,7 +12,7 @@ export type ShowsData = {
   adult: boolean
   name: string
   backdrop_path: string
-}
+}[]
 
 export async function getMovies() {
   const options = {
@@ -28,7 +28,7 @@ export async function getMovies() {
     options
   )
   const movies = await res.json()
-  const moviesArr: MovieData[] = movies.results
+  const moviesArr: MovieData = movies.results
   return moviesArr
 }
 
@@ -46,7 +46,7 @@ export async function getShows() {
     options
   )
   const tvShows = await res.json()
-  const showsArr: ShowsData[] = tvShows.results
+  const showsArr: ShowsData = tvShows.results
   return showsArr
 }
 
