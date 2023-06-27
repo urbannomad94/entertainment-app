@@ -1,3 +1,19 @@
+export type MovieData = {
+  id: number
+  release_date: string
+  adult: boolean
+  title: string
+  backdrop_path: string
+}
+
+export type ShowsData = {
+  id: number
+  first_air_date: string
+  adult: boolean
+  name: string
+  backdrop_path: string
+}
+
 export async function getMovies() {
   const options = {
     method: 'GET',
@@ -12,7 +28,8 @@ export async function getMovies() {
     options
   )
   const movies = await res.json()
-  return movies
+  const moviesArr: MovieData[] = movies.results
+  return moviesArr
 }
 
 export async function getShows() {
@@ -29,13 +46,14 @@ export async function getShows() {
     options
   )
   const tvShows = await res.json()
-  return tvShows
+  const showsArr: ShowsData[] = tvShows.results
+  return showsArr
 }
 
 export async function getMovieAndShows() {
   const movies = await getMovies()
   const shows = await getShows()
-  const moviesAndShows = [...movies.results, ...shows.results].sort(
+  const moviesAndShows = [...movies, ...shows].sort(
     (a, b) => 0.5 - Math.random()
   )
   return moviesAndShows

@@ -1,16 +1,16 @@
 import SmallTile from '@/components/SmallTile/SmallTile'
 import styles from './page.module.css'
 
-import { getMovies } from '@/utils/fetchData'
+import { MovieData, getMovies } from '@/utils/fetchData'
 
 export const metadata = {
   title: 'Entertainment App | Movies',
 }
 
 export default async function Movies() {
-  const movies = await getMovies()
+  const movies: MovieData[] = await getMovies()
 
-  const movieTiles = movies.results.map((movie: any) => {
+  const movieTiles = movies.map((movie: any) => {
     return (
       <SmallTile
         key={movie.id}
