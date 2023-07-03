@@ -21,6 +21,7 @@
 
 @media (max-width: 375px) {
   .container {
+    width: 375px;
     margin: 0;
   }
 

@@ -1,5 +1,6 @@
 .trendingContainer {
   display: flex;
+  /* Need to refactor width */
   width: 87.8vw;
   overflow-x: scroll;
   gap: 40px;
