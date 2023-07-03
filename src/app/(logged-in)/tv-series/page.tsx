@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 export default async function TvSeries() {
-  const shows: ShowsData[] = await getShows()
+  const shows: ShowsData = await getShows()
 
   const showTiles = shows.map((show: any) => {
     return (

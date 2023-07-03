@@ -1,8 +1,19 @@
 .trendingContainer {
   display: flex;
-  overflow-x: hidden;
+  width: 87.8vw;
+  overflow-x: scroll;
   gap: 40px;
   margin: 25px 0 40px 0;
+}
+
+.trendingContainer::-webkit-scrollbar {
+  height: 5px;
+  background-color: var(--light-grey);
+}
+
+.trendingContainer::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  width: 10px;
 }
 
 .title {

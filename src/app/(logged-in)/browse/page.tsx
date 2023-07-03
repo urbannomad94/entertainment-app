@@ -1,14 +1,29 @@
 import styles from './page.module.css'
 import LargeTile from '@/components/LargeTile/LargeTile'
 import SmallTile from '@/components/SmallTile/SmallTile'
-import { getMovieAndShows } from '@/utils/fetchData'
+import { getMoviesAndShows, getUpcomingMovies } from '@/utils/fetchData'
 
 export const metadata = {
   title: 'Entertainment App | Browse',
 }
 
 export default async function Browse() {
-  const moviesAndShows = await getMovieAndShows()
+  const upcomingMovies = await getUpcomingMovies()
+  const moviesAndShows = await getMoviesAndShows()
+
+  const upcomingTiles = upcomingMovies.map((movie: any) => {
+    return (
+      <div key={movie.id} style={{ marginBottom: '10px' }}>
+        <LargeTile
+          year={movie.release_date.split('-')[0]}
+          category='movie'
+          rating={movie.adult}
+          title={movie.title}
+          image={movie.backdrop_path}
+        />
+      </div>
+    )
+  })
 
   const recommendedTiles = moviesAndShows.map((movieOrShow: any) => {
     return (
@@ -33,24 +48,9 @@ export default async function Browse() {
 
   return (
     <>
+      <h1 className={styles.title}>Coming Soon</h1>
+      <div className={styles.trendingContainer}>{upcomingTiles}</div>
       <h1 className={styles.title}>Trending</h1>
-      <div className={styles.trendingContainer}>
-        <LargeTile
-          year={2019}
-          category='movie'
-          rating='PG'
-          title='Beyond Earth'
-          image='placeholder'
-        />
-        <LargeTile
-          year={2022}
-          category='tv-series'
-          rating='PG-13'
-          title='Andor'
-          image='placeholder'
-        />
-      </div>
-      <h1 className={styles.title}>Recommended for you</h1>
       <div className='gridContainer'>{recommendedTiles}</div>
     </>
   )

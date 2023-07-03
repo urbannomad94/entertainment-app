@@ -25,7 +25,8 @@ export default function LargeTile({
       <div
         className={`${styles.container} ${hovered && 'dimmed'} pointerHover`}
         style={{
-          backgroundImage: `url(placeholder)`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${image})`,
+          backgroundSize: 'cover',
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -39,32 +40,34 @@ export default function LargeTile({
           ></Image>
           <span>Play</span>
         </div>
-        <p>
-          {year} •{' '}
-          {category === 'movie' ? (
-            <span>
-              <Image
-                src='/icon-category-movie.svg'
-                alt='play icon'
-                width={12}
-                height={12}
-              ></Image>{' '}
-              Movie
-            </span>
-          ) : (
-            <span>
-              <Image
-                src='/icon-category-tv.svg'
-                alt='tv series icon'
-                width={12}
-                height={12}
-              ></Image>{' '}
-              TV Series
-            </span>
-          )}{' '}
-          • {rating}
-        </p>
-        <h3 className='title'>{title}</h3>
+        <div className={styles.info}>
+          <p>
+            {year} •{' '}
+            {category === 'movie' ? (
+              <span>
+                <Image
+                  src='/icon-category-movie.svg'
+                  alt='play icon'
+                  width={12}
+                  height={12}
+                ></Image>{' '}
+                Movie
+              </span>
+            ) : (
+              <span>
+                <Image
+                  src='/icon-category-tv.svg'
+                  alt='tv series icon'
+                  width={12}
+                  height={12}
+                ></Image>{' '}
+                TV Series
+              </span>
+            )}{' '}
+            • {rating ? 'Adult' : 'Family'}
+          </p>
+          <h3 className='title'>{title}</h3>
+        </div>
       </div>
     </>
   )

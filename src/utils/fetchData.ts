@@ -14,15 +14,15 @@ export type ShowsData = {
   backdrop_path: string
 }[]
 
-export async function getMovies() {
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${process.env.MOVIEDB_API_KEY}`,
-    },
-  }
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: `Bearer ${process.env.MOVIEDB_API_KEY}`,
+  },
+}
 
+export async function getMovies() {
   const res = await fetch(
     'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
     options
@@ -33,14 +33,6 @@ export async function getMovies() {
 }
 
 export async function getShows() {
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: `Bearer ${process.env.MOVIEDB_API_KEY}`,
-    },
-  }
-
   const res = await fetch(
     'https://api.themoviedb.org/3/trending/tv/day?language=en-US',
     options
@@ -50,11 +42,30 @@ export async function getShows() {
   return showsArr
 }
 
-export async function getMovieAndShows() {
+export async function getUpcomingMovies() {
+  const res = await fetch(
+    'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
+    options
+  )
+  const upcomingMovies = await res.json()
+  const upcomingMoviesArr: MovieData = upcomingMovies.results
+  return upcomingMoviesArr
+}
+
+export async function getMoviesAndShows() {
   const movies = await getMovies()
   const shows = await getShows()
   const moviesAndShows = [...movies, ...shows].sort(
     (a, b) => 0.5 - Math.random()
   )
   return moviesAndShows
+}
+
+export async function getDetails(id: any) {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+    options
+  )
+  const details = await res.json()
+  return details
 }
