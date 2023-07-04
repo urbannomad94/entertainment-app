@@ -15,7 +15,7 @@ export default async function TvSeries() {
         key={show.id}
         year={show.first_air_date.split('-')[0].toString()}
         category='tv-series'
-        rating={show.adult}
+        rating={show.vote_average}
         title={show.name}
         image={show.backdrop_path}
       />

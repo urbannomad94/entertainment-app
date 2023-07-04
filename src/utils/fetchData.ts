@@ -43,30 +43,22 @@ export async function getShows() {
 }
 
 export async function getUpcomingMovies() {
-  try {
-    const res = await fetch(
-      'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
-      options
-    )
-    const upcomingMovies = await res.json()
-    const upcomingMoviesArr: MovieData = upcomingMovies.results
-    return upcomingMoviesArr
-  } catch (error) {
-    console.error(error)
-  }
+  const res = await fetch(
+    'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
+    options
+  )
+  const upcomingMovies = await res.json()
+  const upcomingMoviesArr: MovieData = upcomingMovies.results
+  return upcomingMoviesArr
 }
 
 export async function getMoviesAndShows() {
-  try {
-    const movies = await getMovies()
-    const shows = await getShows()
-    const moviesAndShows = [...movies, ...shows].sort(
-      (a, b) => 0.5 - Math.random()
-    )
-    return moviesAndShows
-  } catch (error) {
-    console.error(error)
-  }
+  const movies = await getMovies()
+  const shows = await getShows()
+  const moviesAndShows = [...movies, ...shows].sort(
+    (a, b) => 0.5 - Math.random()
+  )
+  return moviesAndShows
 }
 
 export async function getDetails(id: string) {

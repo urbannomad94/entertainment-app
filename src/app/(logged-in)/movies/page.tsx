@@ -22,7 +22,7 @@ export default async function Movies() {
           key={movie.id}
           year={movie.release_date.split('-')[0].toString()}
           category='movie'
-          rating={movie.adult}
+          rating={movie.vote_average}
           title={movie.title}
           image={movie.backdrop_path}
         />

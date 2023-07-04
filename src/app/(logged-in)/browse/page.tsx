@@ -17,7 +17,7 @@ export default async function Browse() {
         <LargeTile
           year={movie.release_date.split('-')[0]}
           category='movie'
-          rating={movie.adult}
+          rating={movie.vote_average}
           title={movie.title}
           image={movie.backdrop_path}
         />
@@ -35,7 +35,7 @@ export default async function Browse() {
             : movieOrShow.first_air_date.split('-')[0]
         }
         category={movieOrShow.media_type}
-        rating={movieOrShow.adult}
+        rating={movieOrShow.vote_average}
         title={
           movieOrShow.media_type === 'movie'
             ? movieOrShow.title

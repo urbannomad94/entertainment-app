@@ -14,7 +14,7 @@ export default function LargeTile({
 }: {
   year: number
   category: 'movie' | 'tv-series'
-  rating: 'G' | 'PG' | 'PG-13' | 'R'
+  rating: number
   title: string
   image: string
 }) {
@@ -42,7 +42,7 @@ export default function LargeTile({
         </div>
         <div className={styles.info}>
           <p>
-            {year} •{' '}
+            {year}&nbsp;&nbsp;•&nbsp;&nbsp;
             {category === 'movie' ? (
               <span>
                 <Image
@@ -50,8 +50,8 @@ export default function LargeTile({
                   alt='play icon'
                   width={12}
                   height={12}
-                ></Image>{' '}
-                Movie
+                ></Image>
+                &nbsp; Movie
               </span>
             ) : (
               <span>
@@ -60,11 +60,19 @@ export default function LargeTile({
                   alt='tv series icon'
                   width={12}
                   height={12}
-                ></Image>{' '}
-                TV Series
+                ></Image>
+                &nbsp; TV Series
               </span>
-            )}{' '}
-            • {rating ? 'Adult' : 'Family'}
+            )}
+            &nbsp;&nbsp;•&nbsp;&nbsp;
+            <Image
+              src='/icon-star.svg'
+              alt='star icon'
+              width={12}
+              height={12}
+            ></Image>
+            &nbsp;
+            {Math.round(10 * rating) / 10}
           </p>
           <h3 className='title'>{title}</h3>
         </div>

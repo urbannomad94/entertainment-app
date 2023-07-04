@@ -14,7 +14,7 @@ export default function SmallTile({
 }: {
   year: number
   category: 'movie' | 'tv-series'
-  rating: 'G' | 'PG' | 'PG-13' | 'R'
+  rating: number
   title: string
   image: string
 }) {
@@ -42,7 +42,7 @@ export default function SmallTile({
         </div>
       </div>
       <p className={styles.info}>
-        {year} •{' '}
+        {year}&nbsp;&nbsp;•&nbsp;&nbsp;
         {category === 'movie' ? (
           <span>
             <Image
@@ -50,8 +50,8 @@ export default function SmallTile({
               alt='movie icon'
               width={12}
               height={12}
-            ></Image>{' '}
-            Movie
+            ></Image>
+            &nbsp; Movie
           </span>
         ) : (
           <span>
@@ -63,8 +63,16 @@ export default function SmallTile({
             ></Image>{' '}
             TV Series
           </span>
-        )}{' '}
-        • {rating ? 'Adult' : 'Family'}
+        )}
+        &nbsp;&nbsp;•&nbsp;&nbsp;
+        <Image
+          src='/icon-star.svg'
+          alt='star icon'
+          width={12}
+          height={12}
+        ></Image>
+        &nbsp;
+        {Math.round(10 * rating) / 10}
       </p>
       <h3 className={styles.title}>{title}</h3>
     </div>
