@@ -18,7 +18,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: `Bearer ${process.env.MOVIEDB_API_KEY}`,
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_MOVIEDB_API_KEY}`,
   },
 }
 
@@ -43,29 +43,41 @@ export async function getShows() {
 }
 
 export async function getUpcomingMovies() {
-  const res = await fetch(
-    'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
-    options
-  )
-  const upcomingMovies = await res.json()
-  const upcomingMoviesArr: MovieData = upcomingMovies.results
-  return upcomingMoviesArr
+  try {
+    const res = await fetch(
+      'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
+      options
+    )
+    const upcomingMovies = await res.json()
+    const upcomingMoviesArr: MovieData = upcomingMovies.results
+    return upcomingMoviesArr
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 export async function getMoviesAndShows() {
-  const movies = await getMovies()
-  const shows = await getShows()
-  const moviesAndShows = [...movies, ...shows].sort(
-    (a, b) => 0.5 - Math.random()
-  )
-  return moviesAndShows
+  try {
+    const movies = await getMovies()
+    const shows = await getShows()
+    const moviesAndShows = [...movies, ...shows].sort(
+      (a, b) => 0.5 - Math.random()
+    )
+    return moviesAndShows
+  } catch (error) {
+    console.error(error)
+  }
 }
 
-export async function getDetails(id: any) {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
-    options
-  )
-  const details = await res.json()
-  return details
+export async function getDetails(id: string) {
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+      options
+    )
+    const details = await res.json()
+    return details
+  } catch (error) {
+    console.error(error)
+  }
 }

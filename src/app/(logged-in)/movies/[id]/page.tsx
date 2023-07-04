@@ -3,6 +3,7 @@
 import { useParams } from 'next/navigation'
 import styles from './page.module.css'
 import { getDetails } from '@/utils/fetchData'
+import { Suspense, useEffect, useState } from 'react'
 
 // export const metadata = {
 //   title: 'Entertainment App | Movies',
@@ -10,27 +11,20 @@ import { getDetails } from '@/utils/fetchData'
 
 export default async function MovieDetails() {
   const { id } = useParams()
+  const [details, setDetails] = useState({})
 
-  // const options = {
-  //   method: 'GET',
-  //   headers: {
-  //     accept: 'application/json',
-  //     Authorization: `Bearer ${process.env.MOVIEDB_API_KEY}`,
-  //   },
-  // }
-
-  // const res = await fetch(
-  //   `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
-  //   options
-  // )
-  // const movie = await res.json()
-
-  const movie = await getDetails(id)
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getDetails(id)
+      setDetails(data)
+    }
+    fetchData()
+  }, [id])
 
   return (
     <>
-      <h2>{movie.title}</h2>
-      <p>{movie.overview}</p>
+      <h2>{details.title}</h2>
+      <p>{details.overview}</p>
     </>
   )
 }
