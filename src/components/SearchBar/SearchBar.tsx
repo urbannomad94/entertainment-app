@@ -23,6 +23,8 @@ export default function SearchBar() {
       setPlaceholder('Search for TV series')
     } else if (tab === 'bookmarks') {
       setPlaceholder('Search for bookmarked shows')
+    } else {
+      setPlaceholder('Search for movies or TV series')
     }
   }, [tab])
 

@@ -5,10 +5,10 @@
   padding: 32px;
   background-color: var(--dark-blue);
   width: 96px;
-  height: 92vh;
+  height: 90vh;
   max-height: 960px;
   border-radius: 20px;
-  margin: 0 32px 32px 32px;
+  margin: 0 32px;
 }
 
 .tabs {
