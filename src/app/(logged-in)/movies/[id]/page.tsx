@@ -9,9 +9,14 @@ import { useEffect, useState } from 'react'
 //   title: 'Entertainment App | Movies',
 // }
 
+type Details = {
+  title: string
+  overview: string
+}
+
 export default async function MovieDetails() {
   const { id } = useParams()
-  const [details, setDetails] = useState({})
+  const [details, setDetails] = useState<Details>({} as Details)
 
   useEffect(() => {
     const fetchData = async () => {

@@ -1,5 +1,6 @@
 'use client'
 
+import { TileProps } from '@/app/types/TileProps.types'
 import styles from './SmallTile.module.css'
 import Image from 'next/image'
 
@@ -11,13 +12,7 @@ export default function SmallTile({
   rating,
   title,
   image,
-}: {
-  year: number
-  category: 'movie' | 'tv-series'
-  rating: number
-  title: string
-  image: string
-}) {
+}: TileProps) {
   const [hovered, setHovered] = useState(false)
 
   return (
