@@ -2,17 +2,21 @@
 
 import { useParams } from 'next/navigation'
 import styles from './page.module.css'
-import { MovieProps } from '@/app/types/Types.types'
-import { getMovieDetails } from '@/utils/fetchData'
+import { ShowProps } from '@/app/types/Types.types'
+import { getShowDetails } from '@/utils/fetchData'
 import { useEffect, useState } from 'react'
 
-export default async function MovieDetails() {
+// export const metadata = {
+//   title: 'Entertainment App | Movies',
+// }
+
+export default async function ShowDetails() {
   const { id } = useParams()
-  const [details, setDetails] = useState<MovieProps>({} as MovieProps)
+  const [details, setDetails] = useState<ShowProps>({} as ShowProps)
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getMovieDetails(id)
+      const data = await getShowDetails(id)
       console.log(data)
       setDetails(data)
     }
@@ -21,8 +25,7 @@ export default async function MovieDetails() {
 
   return (
     <div className={styles.container}>
-      <h2>{details.title}</h2>
-      <p>{details.tagline}</p>
+      <h2>{details.name}</h2>
       <p>{details.overview}</p>
     </div>
   )

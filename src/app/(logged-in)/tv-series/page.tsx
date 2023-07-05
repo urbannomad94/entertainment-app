@@ -1,24 +1,32 @@
 import SmallTile from '@/components/SmallTile/SmallTile'
 import styles from './page.module.css'
-import { ShowsData, getShows } from '@/utils/fetchData'
+import { ShowProps } from '@/app/types/Types.types'
+import { getShows } from '@/utils/fetchData'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Entertainment App | TV Series',
 }
 
 export default async function TvSeries() {
-  const shows: ShowsData = await getShows()
+  const shows: ShowProps[] = await getShows()
 
-  const showTiles = shows.map((show: any) => {
+  const showTiles = shows.map((show: ShowProps) => {
     return (
-      <SmallTile
+      <Link
         key={show.id}
-        year={show.first_air_date.split('-')[0].toString()}
-        category='tv-series'
-        rating={show.vote_average}
-        title={show.name}
-        image={show.backdrop_path}
-      />
+        href={`/tv-series/${show.id}`}
+        style={{ textDecoration: 'none' }}
+      >
+        <SmallTile
+          key={show.id}
+          year={+show.first_air_date.split('-')[0].toString()}
+          category='tv-series'
+          rating={show.vote_average}
+          title={show.name}
+          image={show.backdrop_path}
+        />
+      </Link>
     )
   })
   return (

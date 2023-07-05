@@ -1,18 +1,4 @@
-export type MovieData = {
-  id: number
-  release_date: string
-  adult: boolean
-  title: string
-  backdrop_path: string
-}[]
-
-export type ShowsData = {
-  id: number
-  first_air_date: string
-  adult: boolean
-  name: string
-  backdrop_path: string
-}[]
+import { MovieProps, ShowProps } from '@/app/types/Types.types'
 
 const options = {
   method: 'GET',
@@ -28,7 +14,7 @@ export async function getMovies() {
     options
   )
   const movies = await res.json()
-  const moviesArr: MovieData = movies.results
+  const moviesArr: MovieProps[] = movies.results
   return moviesArr
 }
 
@@ -38,7 +24,7 @@ export async function getShows() {
     options
   )
   const tvShows = await res.json()
-  const showsArr: ShowsData = tvShows.results
+  const showsArr: ShowProps[] = tvShows.results
   return showsArr
 }
 
@@ -48,7 +34,7 @@ export async function getUpcomingMovies() {
     options
   )
   const upcomingMovies = await res.json()
-  const upcomingMoviesArr: MovieData = upcomingMovies.results
+  const upcomingMoviesArr: MovieProps[] = upcomingMovies.results
   return upcomingMoviesArr
 }
 
@@ -61,10 +47,23 @@ export async function getMoviesAndShows() {
   return moviesAndShows
 }
 
-export async function getDetails(id: string) {
+export async function getMovieDetails(id: string) {
   try {
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+      options
+    )
+    const details = await res.json()
+    return details
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export async function getShowDetails(id: string) {
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/tv/${id}?language=en-US`,
       options
     )
     const details = await res.json()

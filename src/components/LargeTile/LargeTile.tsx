@@ -1,6 +1,6 @@
 'use client'
 
-import { TileProps } from '@/app/types/TileProps.types'
+import { TileProps } from '@/app/types/Types.types'
 import styles from './LargeTile.module.css'
 import Image from 'next/image'
 
