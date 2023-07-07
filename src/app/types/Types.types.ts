@@ -3,7 +3,7 @@ export type TileProps = {
   category: 'movie' | 'tv-series'
   rating: number
   title: string
-  image: string
+  image?: string
 }
 
 export type MovieProps = {

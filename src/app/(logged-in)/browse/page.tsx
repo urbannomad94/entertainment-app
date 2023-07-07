@@ -13,7 +13,7 @@ export default async function Browse() {
   const upcomingMovies = await getUpcomingMovies()
   const moviesAndShows = await getMoviesAndShows()
 
-  const upcomingTiles = upcomingMovies.map((movie: any) => {
+  const upcomingTiles = upcomingMovies.map((movie: MovieProps) => {
     return (
       <Link
         key={movie.id}
@@ -22,7 +22,7 @@ export default async function Browse() {
       >
         <div key={movie.id} style={{ marginBottom: '10px' }}>
           <LargeTile
-            year={movie.release_date.split('-')[0]}
+            year={+movie.release_date.split('-')[0]}
             category='movie'
             rating={movie.vote_average}
             title={movie.title}

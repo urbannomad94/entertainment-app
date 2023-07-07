@@ -1,6 +1,7 @@
 'use client'
 
 import { useParams } from 'next/navigation'
+import Image from 'next/image'
 import styles from './page.module.css'
 import { MovieProps } from '@/app/types/Types.types'
 import { getMovieDetails } from '@/utils/fetchData'
@@ -23,7 +24,18 @@ export default async function MovieDetails() {
     <div className={styles.container}>
       <h2>{details.title}</h2>
       <p>{details.tagline}</p>
+      <p>{details.runtime}</p>
       <p>{details.overview}</p>
+      <p>{details.release_date}</p>
+      <p>{details.vote_average}</p>
+      <p>{details.budget}</p>
+      <Image
+        src={`https://image.tmdb.org/t/p/original${details.backdrop_path}`}
+        alt='movie poster'
+        // width={509}
+        // height={763}
+        // fill
+      ></Image>
     </div>
   )
 }
