@@ -29,13 +29,21 @@ export default async function MovieDetails() {
       <p>{details.release_date}</p>
       <p>{details.vote_average}</p>
       <p>{details.budget}</p>
-      <Image
-        src={`https://image.tmdb.org/t/p/original${details.backdrop_path}`}
-        alt='movie poster'
-        // width={509}
-        // height={763}
-        // fill
-      ></Image>
+      <div
+        className={styles.imgContainer}
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${details.poster_path})`,
+          backgroundSize: 'cover',
+        }}
+      >
+        {/* <Image
+          src={`https://image.tmdb.org/t/p/original${details.backdrop_path}`}
+          alt='movie poster'
+          // width={509}
+          // height={763}
+          // fill
+        ></Image> */}
+      </div>
     </div>
   )
 }

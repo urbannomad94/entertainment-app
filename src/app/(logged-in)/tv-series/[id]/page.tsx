@@ -26,7 +26,18 @@ export default async function ShowDetails() {
   return (
     <div className={styles.container}>
       <h2>{details.name}</h2>
+      <p>{details.tagline}</p>
+      <p>{details.episode_run_time}</p>
       <p>{details.overview}</p>
+      <p>{details.first_air_date}</p>
+      <p>{details.vote_average}</p>
+      <div
+        className={styles.imgContainer}
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${details.poster_path})`,
+          backgroundSize: 'cover',
+        }}
+      ></div>
     </div>
   )
 }
