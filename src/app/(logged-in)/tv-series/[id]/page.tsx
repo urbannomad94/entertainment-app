@@ -25,12 +25,26 @@ export default async function ShowDetails() {
 
   return (
     <div className={styles.container}>
-      <h2>{details.name}</h2>
-      <p>{details.tagline}</p>
-      <p>{details.episode_run_time}</p>
-      <p>{details.overview}</p>
-      <p>{details.first_air_date}</p>
-      <p>{details.vote_average}</p>
+      <div className={styles.details}>
+        <h2 className={styles.title}>{details.name}</h2>
+        <p className={styles.tagline}>{details.tagline}</p>
+        <p>
+          <span className={styles.red}>Episode Runtime: </span>
+          {details.episode_run_time} minutes
+        </p>
+        <p>
+          <span className={styles.red}>Description: </span>
+          {details.overview}
+        </p>
+        <p>
+          <span className={styles.red}>Initial Release Date: </span>
+          {details.first_air_date}
+        </p>
+        <p>
+          <span className={styles.red}>Average Rating: </span>
+          {details.vote_average}
+        </p>
+      </div>
       <div
         className={styles.imgContainer}
         style={{

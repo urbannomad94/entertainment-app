@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar/NavBar'
 import SearchBar from '@/components/SearchBar/SearchBar'
 import styles from './layout.module.css'
 import SearchProvider from '@/context/MultiProvider'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Entertainment App',
