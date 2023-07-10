@@ -6,6 +6,8 @@ export const MultiContext = createContext<any>(null)
 
 function SearchProvider({ children }: { children: any }) {
   const [search, setSearch] = useState('')
+  const [searchType, setSearchType] = useState<'movie' | 'show' | 'all'>('all')
+  const [searchResults, setSearchResults] = useState<any[]>([])
   const [movieBookmarks, setMovieBookmarks] = useState<string[]>([] as string[])
   const [showBookmarks, setShowBookmarks] = useState<string[]>([] as string[])
 
@@ -14,10 +16,10 @@ function SearchProvider({ children }: { children: any }) {
       value={{
         search,
         setSearch,
-        movieBookmarks,
-        setMovieBookmarks,
-        showBookmarks,
-        setShowBookmarks,
+        searchType,
+        setSearchType,
+        searchResults,
+        setSearchResults,
       }}
     >
       {children}

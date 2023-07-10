@@ -72,3 +72,33 @@ export async function getShowDetails(id: string) {
     console.error(error)
   }
 }
+
+export async function searchMovies(search: string) {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&language=en-US&page=1`,
+    options
+  )
+  const movies = await res.json()
+  const moviesArr: MovieProps[] = movies.results
+  return moviesArr
+}
+
+export async function searchShows(search: string) {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/tv?query=${search}&include_adult=false&language=en-US&page=1`,
+    options
+  )
+  const shows = await res.json()
+  const showsArr: ShowProps[] = shows.results
+  return showsArr
+}
+
+export async function searchMoviesAndShows(search: string) {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/multi?query=${search}&include_adult=false&language=en-US&page=1`,
+    options
+  )
+  const moviesAndShows = await res.json()
+  const moviesAndShowsArr = moviesAndShows.results
+  return moviesAndShowsArr
+}
