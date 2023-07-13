@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useContext, useEffect } from 'react'
 import { MultiContext } from '@/context/MultiProvider'
 
-export default async function MoviesSearch() {
+export default async function AllSearch() {
   const { searchResults } = useContext(MultiContext)
 
   const searchTiles = searchResults.map((movieOrShow: any) => {

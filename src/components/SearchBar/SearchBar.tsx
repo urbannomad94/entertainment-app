@@ -22,9 +22,10 @@ export default function SearchBar() {
 
   const tab = usePathname().substring(1)
 
-  // useEffect(() => {
-  //   console.log(searchType)
-  // }, [searchType])
+  useEffect(() => {
+    setActiveSearch('')
+    setSearchResults([])
+  }, [tab])
 
   useEffect(() => {
     if (tab === 'browse') {
@@ -45,22 +46,22 @@ export default function SearchBar() {
     }
   }, [tab])
 
-  useEffect(() => {
-    async function fetchData() {
-      let results
-      if (searchType === 'movies') {
-        results = await searchMovies(search)
-      } else if (searchType === 'tv-series') {
-        results = await searchShows(search)
-      } else {
-        results = await searchMoviesAndShows(search)
-      }
-      console.log(results)
-      setSearchResults(results)
-    }
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     let results
+  //     if (searchType === 'movies') {
+  //       results = await searchMovies(search)
+  //     } else if (searchType === 'tv-series') {
+  //       results = await searchShows(search)
+  //     } else {
+  //       results = await searchMoviesAndShows(search)
+  //     }
+  //     console.log(results)
+  //     setSearchResults(results)
+  //   }
 
-    fetchData()
-  }, [search])
+  //   fetchData()
+  // }, [search])
 
   const handleChange = (e: any) => setActiveSearch(e.target.value)
 
@@ -68,14 +69,12 @@ export default function SearchBar() {
     if (e.key === 'Enter') {
       setSearch(activeSearch)
       router.push(`/search/${searchType}`)
-      setSearchResults([])
     }
   }
 
   const handleClick = () => {
     setSearch(activeSearch)
     router.push(`/search/${searchType}`)
-    setSearchResults([])
   }
 
   return (

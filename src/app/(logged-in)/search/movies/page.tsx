@@ -5,11 +5,14 @@ import { MovieProps } from '@/app/types/Types.types'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { MultiContext } from '@/context/MultiProvider'
+import { searchMovies } from '@/utils/fetchData'
 
 export default async function MoviesSearch() {
-  const { searchResults } = useContext(MultiContext)
+  const { search } = useContext(MultiContext)
 
-  const searchTiles = searchResults.map((movie: MovieProps) => {
+  const searchResults = await searchMovies(search)
+
+  const searchTiles = searchResults?.map((movie: MovieProps) => {
     return (
       <Link
         key={movie.id}
@@ -18,7 +21,7 @@ export default async function MoviesSearch() {
       >
         <SmallTile
           key={movie.id}
-          year={+movie.release_date.split('-')[0].toString()}
+          year={+movie?.release_date.split('-')[0].toString()}
           category='movie'
           rating={movie.vote_average}
           title={movie.title}
