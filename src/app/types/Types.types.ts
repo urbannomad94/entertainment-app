@@ -28,5 +28,5 @@ export type ShowProps = {
   vote_average: number
   backdrop_path?: string
   poster_path?: string
-  episode_run_time?: number
+  episode_run_time?: number[]
 }

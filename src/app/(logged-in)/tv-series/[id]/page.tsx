@@ -14,6 +14,8 @@ export default async function ShowDetails() {
   const { id } = useParams()
   const [details, setDetails] = useState<ShowProps>({} as ShowProps)
 
+  console.log(details)
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getShowDetails(id)
@@ -28,10 +30,15 @@ export default async function ShowDetails() {
       <div className={styles.details}>
         <h2 className={styles.title}>{details.name}</h2>
         <p className={styles.tagline}>{details.tagline}</p>
-        <p>
-          <span className={styles.red}>Episode Runtime: </span>
-          {details.episode_run_time} minutes
-        </p>
+        {details.episode_run_time?.length > 0 ? (
+          <p>
+            <span className={styles.red}>Episode Runtime: </span>
+            {details.episode_run_time} minutes
+          </p>
+        ) : (
+          <></>
+        )}
+
         <p>
           <span className={styles.red}>Description: </span>
           {details.overview}
