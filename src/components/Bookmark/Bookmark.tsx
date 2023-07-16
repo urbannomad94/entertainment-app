@@ -9,7 +9,7 @@ export default function Bookmark({ id }: { id: number }) {
   const { movieBookmarks, setMovieBookmarks, showBookmarks, setShowBookmarks } =
     useContext(MultiContext)
 
-  let active = true
+  let active = false
 
   // let active
   // if (movieBookmarks.includes(id) || showBookmarks.includes(id)) {

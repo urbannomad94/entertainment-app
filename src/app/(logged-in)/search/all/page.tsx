@@ -18,7 +18,7 @@ export default async function AllSearch() {
         style={{ textDecoration: 'none' }}
       >
         <SmallTile
-          key={movieOrShow.id}
+          id={movieOrShow.id}
           year={
             movieOrShow.media_type === 'movie'
               ? movieOrShow.release_date.split('-')[0]
