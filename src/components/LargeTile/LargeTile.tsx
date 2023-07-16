@@ -3,7 +3,7 @@
 import { TileProps } from '@/app/types/Types.types'
 import styles from './LargeTile.module.css'
 import Image from 'next/image'
-
+import Bookmark from '../Bookmark/Bookmark'
 import { useState } from 'react'
 
 export default function LargeTile({
@@ -12,6 +12,7 @@ export default function LargeTile({
   rating,
   title,
   image,
+  id,
 }: TileProps) {
   const [hovered, setHovered] = useState(false)
 
@@ -26,6 +27,7 @@ export default function LargeTile({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
+        <Bookmark id={id} />
         <div className={`${!hovered && 'hidden'} playBtn`}>
           <Image
             src='/icon-play.svg'

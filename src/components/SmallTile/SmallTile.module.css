@@ -2,6 +2,7 @@
   width: 280px;
   height: 226px;
   color: var(--white);
+  position: relative;
 }
 
 .imgContainer {

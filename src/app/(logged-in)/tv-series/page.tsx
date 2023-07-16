@@ -19,7 +19,7 @@ export default async function TvSeries() {
         style={{ textDecoration: 'none' }}
       >
         <SmallTile
-          key={show.id}
+          id={show.id}
           year={+show.first_air_date.split('-')[0].toString()}
           category='tv-series'
           rating={show.vote_average}

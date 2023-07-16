@@ -4,6 +4,7 @@ export type TileProps = {
   rating: number
   title: string
   image?: string
+  id: number
 }
 
 export type MovieProps = {

@@ -19,7 +19,7 @@ export default async function Movies() {
         style={{ textDecoration: 'none' }}
       >
         <SmallTile
-          key={movie.id}
+          id={movie.id}
           year={+movie.release_date.split('-')[0].toString()}
           category='movie'
           rating={movie.vote_average}

@@ -22,6 +22,7 @@ export default async function Browse() {
       >
         <div key={movie.id} style={{ marginBottom: '10px' }}>
           <LargeTile
+            id={movie.id}
             year={+movie.release_date.split('-')[0]}
             category='movie'
             rating={movie.vote_average}
@@ -43,7 +44,7 @@ export default async function Browse() {
         style={{ textDecoration: 'none' }}
       >
         <SmallTile
-          key={movieOrShow.id}
+          id={movieOrShow.id}
           year={
             movieOrShow.media_type === 'movie'
               ? movieOrShow.release_date.split('-')[0]

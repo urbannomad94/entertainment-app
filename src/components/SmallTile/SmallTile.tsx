@@ -5,6 +5,7 @@ import styles from './SmallTile.module.css'
 import Image from 'next/image'
 
 import { useState } from 'react'
+import Bookmark from '../Bookmark/Bookmark'
 
 export default function SmallTile({
   year,
@@ -12,6 +13,7 @@ export default function SmallTile({
   rating,
   title,
   image,
+  id,
 }: TileProps) {
   const [hovered, setHovered] = useState(false)
 
@@ -26,6 +28,7 @@ export default function SmallTile({
           backgroundSize: 'cover',
         }}
       >
+        <Bookmark id={id} />
         <div className={`${!hovered && 'hidden'} playBtn`}>
           <Image
             src='/icon-play.svg'
