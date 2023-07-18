@@ -4,9 +4,16 @@ import SmallTile from '@/components/SmallTile/SmallTile'
 import Link from 'next/link'
 import { useContext, useEffect } from 'react'
 import { MultiContext } from '@/context/MultiProvider'
+import { searchMovies, searchShows } from '@/utils/fetchData'
 
 export default async function AllSearch() {
-  const { searchResults } = useContext(MultiContext)
+  const { search } = useContext(MultiContext)
+
+  const movieResults = await searchMovies(search)
+  const showResults = await searchShows(search)
+  const searchResults = [...movieResults, ...showResults].sort(
+    (a, b) => 0.5 - Math.random()
+  )
 
   const searchTiles = searchResults.map((movieOrShow: any) => {
     return (
@@ -21,8 +28,8 @@ export default async function AllSearch() {
           id={movieOrShow.id}
           year={
             movieOrShow.media_type === 'movie'
-              ? movieOrShow.release_date.split('-')[0]
-              : movieOrShow.first_air_date.split('-')[0]
+              ? +movieOrShow.release_date.split('-')[0].toString()
+              : +movieOrShow.first_air_date.split('-')[0].toString()
           }
           category={movieOrShow.media_type}
           rating={movieOrShow.vote_average}
@@ -39,7 +46,7 @@ export default async function AllSearch() {
 
   return (
     <>
-      <h1>Movies</h1>
+      <h1>Search Results</h1>
       <div className='gridContainer'>{searchTiles}</div>
     </>
   )

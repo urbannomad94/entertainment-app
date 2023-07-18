@@ -3,13 +3,13 @@
 import { MultiContext } from '@/context/MultiProvider'
 import styles from './Bookmark.module.css'
 import Image from 'next/image'
-import { useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 
 export default function Bookmark({ id }: { id: number }) {
   const { movieBookmarks, setMovieBookmarks, showBookmarks, setShowBookmarks } =
     useContext(MultiContext)
 
-  let active = false
+  const [isActive, setIsActive] = useState(false)
 
   // let active
   // if (movieBookmarks.includes(id) || showBookmarks.includes(id)) {
@@ -18,9 +18,15 @@ export default function Bookmark({ id }: { id: number }) {
   //   active = false
   // }
 
+  function clickHandler(e: React.MouseEvent<HTMLElement>) {
+    e.preventDefault()
+    // e.stopPropagation()
+    setIsActive((prev) => !prev)
+  }
+
   return (
-    <div className={styles.container}>
-      {active ? (
+    <div className={styles.container} onClick={clickHandler}>
+      {isActive ? (
         <Image
           src='/icon-bookmark-full.svg'
           alt='empty bookmark icon'

@@ -5,9 +5,12 @@ import { ShowProps } from '@/app/types/Types.types'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { MultiContext } from '@/context/MultiProvider'
+import { searchShows } from '@/utils/fetchData'
 
 export default async function ShowSearch() {
-  const { searchResults } = useContext(MultiContext)
+  const { search } = useContext(MultiContext)
+
+  const searchResults = await searchShows(search)
 
   const searchTiles = searchResults?.map((show: ShowProps) => {
     return (
