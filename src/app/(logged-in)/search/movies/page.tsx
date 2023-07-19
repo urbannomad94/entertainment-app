@@ -3,7 +3,7 @@
 import SmallTile from '@/components/SmallTile/SmallTile'
 import { MovieProps } from '@/app/types/Types.types'
 import Link from 'next/link'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { MultiContext } from '@/context/MultiProvider'
 import { searchMovies } from '@/utils/fetchData'
 
