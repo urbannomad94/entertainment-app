@@ -13,7 +13,7 @@ export default async function MovieDetails() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getMovieDetails(id)
+      const data = await getMovieDetails(+id)
       setDetails(data)
     }
     fetchData()

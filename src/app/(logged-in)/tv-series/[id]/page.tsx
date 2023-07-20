@@ -18,7 +18,7 @@ export default async function ShowDetails() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getShowDetails(id)
+      const data = await getShowDetails(+id)
       console.log(data)
       setDetails(data)
     }
