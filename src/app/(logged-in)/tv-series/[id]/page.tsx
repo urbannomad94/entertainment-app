@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import styles from './page.module.css'
-import { ShowProps } from '@/app/types/Types.types'
+import { ShowProps } from '@/types/Types.types'
 import { getShowDetails } from '@/utils/fetchData'
 import { useEffect, useState } from 'react'
 

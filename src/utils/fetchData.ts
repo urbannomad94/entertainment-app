@@ -1,4 +1,4 @@
-import { MovieProps, ShowProps } from '@/app/types/Types.types'
+import { MovieProps, ShowProps } from '@/types/Types.types'
 
 const options = {
   method: 'GET',
@@ -47,7 +47,7 @@ export async function getMoviesAndShows() {
   return moviesAndShows
 }
 
-export async function getMovieDetails(id: string) {
+export async function getMovieDetails(id: number) {
   try {
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
@@ -60,7 +60,7 @@ export async function getMovieDetails(id: string) {
   }
 }
 
-export async function getShowDetails(id: string) {
+export async function getShowDetails(id: number) {
   try {
     const res = await fetch(
       `https://api.themoviedb.org/3/tv/${id}?language=en-US`,

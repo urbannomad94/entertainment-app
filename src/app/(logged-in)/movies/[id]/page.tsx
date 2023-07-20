@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import styles from './page.module.css'
-import { MovieProps } from '@/app/types/Types.types'
+import { MovieProps } from '@/types/Types.types'
 import { getMovieDetails } from '@/utils/fetchData'
 import { useEffect, useState } from 'react'
 

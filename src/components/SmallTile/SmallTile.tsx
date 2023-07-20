@@ -1,6 +1,6 @@
 'use client'
 
-import { TileProps } from '@/app/types/Types.types'
+import { TileProps } from '@/types/Types.types'
 import styles from './SmallTile.module.css'
 import Image from 'next/image'
 
@@ -28,7 +28,7 @@ export default function SmallTile({
           backgroundSize: 'cover',
         }}
       >
-        <Bookmark id={id} />
+        <Bookmark id={id} category={category} />
         <div className={`${!hovered && 'hidden'} playBtn`}>
           <Image
             src='/icon-play.svg'

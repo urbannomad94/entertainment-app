@@ -1,6 +1,6 @@
 'use client'
 
-import { TileProps } from '@/app/types/Types.types'
+import { TileProps } from '@/types/Types.types'
 import styles from './LargeTile.module.css'
 import Image from 'next/image'
 import Bookmark from '../Bookmark/Bookmark'
@@ -27,7 +27,7 @@ export default function LargeTile({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <Bookmark id={id} />
+        <Bookmark id={id} category={category} />
         <div className={`${!hovered && 'hidden'} playBtn`}>
           <Image
             src='/icon-play.svg'

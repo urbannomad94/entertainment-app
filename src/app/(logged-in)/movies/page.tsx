@@ -1,6 +1,6 @@
 import SmallTile from '@/components/SmallTile/SmallTile'
 import styles from './page.module.css'
-import { MovieProps } from '@/app/types/Types.types'
+import { MovieProps } from '@/types/Types.types'
 import { getMovies } from '@/utils/fetchData'
 import Link from 'next/link'
 

@@ -1,9 +1,9 @@
 'use client'
 
 import SmallTile from '@/components/SmallTile/SmallTile'
-import { MovieProps } from '@/app/types/Types.types'
+import { MovieProps } from '@/types/Types.types'
 import Link from 'next/link'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { MultiContext } from '@/context/MultiProvider'
 import { searchMovies } from '@/utils/fetchData'
 
@@ -33,7 +33,7 @@ export default async function MoviesSearch() {
 
   return (
     <>
-      <h1>Movies</h1>
+      <h1>Movie Search Results</h1>
       <div className='gridContainer'>{searchTiles}</div>
     </>
   )

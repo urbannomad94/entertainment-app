@@ -1,6 +1,6 @@
 import SmallTile from '@/components/SmallTile/SmallTile'
 import styles from './page.module.css'
-import { ShowProps } from '@/app/types/Types.types'
+import { ShowProps } from '@/types/Types.types'
 import { getShows } from '@/utils/fetchData'
 import Link from 'next/link'
 

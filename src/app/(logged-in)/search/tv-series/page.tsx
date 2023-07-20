@@ -1,7 +1,7 @@
 'use client'
 
 import SmallTile from '@/components/SmallTile/SmallTile'
-import { ShowProps } from '@/app/types/Types.types'
+import { ShowProps } from '@/types/Types.types'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { MultiContext } from '@/context/MultiProvider'
@@ -33,7 +33,7 @@ export default async function ShowSearch() {
 
   return (
     <>
-      <h1>TV Series</h1>
+      <h1>TV Series Search Results</h1>
       <div className='gridContainer'>{searchTiles}</div>
     </>
   )

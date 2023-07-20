@@ -1,4 +1,4 @@
-import { MovieProps, ShowProps } from '@/app/types/Types.types'
+import { MovieProps, ShowProps } from '@/types/Types.types'
 import styles from './page.module.css'
 import LargeTile from '@/components/LargeTile/LargeTile'
 import SmallTile from '@/components/SmallTile/SmallTile'
