@@ -30,15 +30,22 @@ export default async function ShowDetails() {
       <div className={styles.details}>
         <h2 className={styles.title}>{details.name}</h2>
         <p className={styles.tagline}>{details.tagline}</p>
-        {details.episode_run_time?.length > 0 ? (
+        {/* {details.episode_run_time.length > 0 ? (
           <p>
             <span className={styles.red}>Episode Runtime: </span>
             {details.episode_run_time} minutes
           </p>
         ) : (
           <></>
+        )} */}
+        {details.episode_run_time === undefined ? (
+          <></>
+        ) : (
+          <p>
+            <span className={styles.red}>Episode Runtime: </span>
+            {details.episode_run_time} minutes
+          </p>
         )}
-
         <p>
           <span className={styles.red}>Description: </span>
           {details.overview}
