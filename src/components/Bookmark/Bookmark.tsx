@@ -17,18 +17,14 @@ export default function Bookmark({
   const { movieBookmarks, setMovieBookmarks, showBookmarks, setShowBookmarks } =
     useContext(MultiContext)
 
-  let isActive: boolean
-  if (movieBookmarks.find((movie: MovieProps) => movie.id === id)) {
-    isActive = true
-  } else if (showBookmarks.find((show: ShowProps) => show.id === id)) {
-    isActive = true
-  } else {
-    isActive = false
-  }
+  let isActive: boolean =
+    movieBookmarks.find((movie: MovieProps) => movie.id === id) ||
+    showBookmarks.find((show: ShowProps) => show.id === id)
 
   async function clickHandler(e: any) {
     e.preventDefault()
     let details: {}
+    //Adding movie details to appropriate bookmark array
     if (!isActive) {
       if (category === 'movie') {
         details = await getMovieDetails(id)
@@ -48,8 +44,8 @@ export default function Bookmark({
         )
       }
     }
-    console.log('Movie Bookmarks:', movieBookmarks)
-    console.log('Show Bookmarks:', showBookmarks)
+    // console.log('Movie Bookmarks:', movieBookmarks)
+    // console.log('Show Bookmarks:', showBookmarks)
   }
 
   return (

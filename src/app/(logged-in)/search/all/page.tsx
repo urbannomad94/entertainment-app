@@ -30,7 +30,7 @@ export default async function AllSearch() {
               ? +movieOrShow.release_date.split('-')[0].toString()
               : +movieOrShow.first_air_date.split('-')[0].toString()
           }
-          category={type === 'movies' ? 'movie' : 'tv-series'}
+          category={type === 'movies' ? 'movie' : 'tv'}
           rating={movieOrShow.vote_average}
           title={type === 'movies' ? movieOrShow.title : movieOrShow.name}
           image={movieOrShow.backdrop_path}
