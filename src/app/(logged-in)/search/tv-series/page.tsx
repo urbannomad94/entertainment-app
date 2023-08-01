@@ -22,7 +22,7 @@ export default async function ShowSearch() {
         <SmallTile
           id={show.id}
           year={+show?.first_air_date.split('-')[0].toString()}
-          category='tv-series'
+          category='tv'
           rating={show.vote_average}
           title={show.name}
           image={show.backdrop_path}
