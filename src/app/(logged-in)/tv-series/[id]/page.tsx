@@ -1,6 +1,3 @@
-'use client'
-
-import { useParams } from 'next/navigation'
 import styles from './page.module.css'
 import { ShowProps } from '@/types/Types.types'
 import { getShowDetails } from '@/utils/fetchData'
@@ -10,34 +7,18 @@ import { useEffect, useState } from 'react'
 //   title: 'Entertainment App | Movies',
 // }
 
-export default async function ShowDetails() {
-  const { id } = useParams()
-  const [details, setDetails] = useState<ShowProps>({} as ShowProps)
-
-  console.log(details)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getShowDetails(+id)
-      console.log(data)
-      setDetails(data)
-    }
-    fetchData()
-  }, [id])
+export default async function ShowDetails({
+  params,
+}: {
+  params: { id: number }
+}) {
+  const details = await getShowDetails(params.id)
 
   return (
     <div className={styles.container}>
       <div className={styles.details}>
         <h2 className={styles.title}>{details.name}</h2>
         <p className={styles.tagline}>{details.tagline}</p>
-        {/* {details.episode_run_time.length > 0 ? (
-          <p>
-            <span className={styles.red}>Episode Runtime: </span>
-            {details.episode_run_time} minutes
-          </p>
-        ) : (
-          <></>
-        )} */}
         {details.episode_run_time === undefined ? (
           <></>
         ) : (

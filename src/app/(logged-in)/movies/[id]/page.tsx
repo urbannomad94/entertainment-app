@@ -1,29 +1,21 @@
-'use client'
-
-import { useParams } from 'next/navigation'
-import Image from 'next/image'
+// import { useParams } from 'next/navigation'
 import styles from './page.module.css'
 import { MovieProps } from '@/types/Types.types'
 import { getMovieDetails } from '@/utils/fetchData'
 import { useEffect, useState } from 'react'
 
-export default async function MovieDetails() {
-  const { id } = useParams()
-  const [details, setDetails] = useState<MovieProps>({} as MovieProps)
+export default async function MovieDetails({
+  params,
+}: {
+  params: { id: number }
+}) {
+  const details = await getMovieDetails(params.id)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getMovieDetails(+id)
-      setDetails(data)
-    }
-    fetchData()
-  }, [id])
-
-  // const releaseDate = new Date(details.release_date)
-  // const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(
-  //   releaseDate
-  // )
-  // const formattedDate = `${month} ${releaseDate.getDate()} ${releaseDate.getFullYear()}`
+  const releaseDate = new Date(details.release_date)
+  const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(
+    releaseDate
+  )
+  const formattedDate = `${month} ${releaseDate.getDate()} ${releaseDate.getFullYear()}`
 
   return (
     <div className={styles.container}>
